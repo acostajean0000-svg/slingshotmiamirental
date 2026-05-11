@@ -402,15 +402,8 @@
         <h2 style="font-size:2rem;font-weight:800;margin-bottom:0.5rem;">Book Your Slingshot in Miami</h2>
         <p style="color:#9ca3af;font-size:0.9rem;">Select your date and time below — instant confirmation.</p>
       </div>
-      <div id="fareharbor-wrap" class="fade-in">
-        <!-- FareHarbor: click-to-load (keeps 942KB off initial page load) -->
-        <div id="fh-placeholder" style="min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background:#111;border-radius:1.25rem;border:1px solid #222;padding:40px 24px;">
-          <div style="font-size:1rem;color:#9ca3af;text-align:center;max-width:320px;line-height:1.6;">Select your date and vehicle — tap below to open the booking calendar</div>
-          <button onclick="loadFH()" style="background:#16a34a;color:#fff;border:none;padding:18px 48px;font-size:1.05rem;font-weight:800;border-radius:0.85rem;cursor:pointer;font-family:system-ui,sans-serif;letter-spacing:1px;text-transform:uppercase;">
-            📅 Open Booking Calendar
-          </button>
-          <div style="font-size:.75rem;color:#4b5563;">Secure booking · Instant confirmation</div>
-        </div>
+      <div id="fareharbor-wrap" class="fade-in" style="min-height:420px;">
+        <script src="https://fareharbor.com/embeds/script/calendar/miamistylerentals/items/339925/?fallback=simple&full-items=yes&flow=613885" async></script>
       </div>
       <p style="text-align:center;color:#6b7280;font-size:0.8rem;margin-top:1rem;">
         Prefer to book by phone? Call <a href="tel:7866944178" style="color:#22c55e;">(786) 694-4178</a> or <a href="https://wa.me/17866944178" target="_blank" style="color:#22c55e;">WhatsApp us</a>.
@@ -624,21 +617,6 @@
     // ── SHOW PHONE IN NAV ON DESKTOP ──────────────────────────────
     if (window.innerWidth >= 768) document.getElementById('nav-phone').style.display = 'block';
 
-    // ── FAREHARBOR CLICK-TO-LOAD (keeps 942KB off initial load) ───
-    var fhLoaded = false;
-    function loadFH() {
-      if (fhLoaded) return;
-      fhLoaded = true;
-      var ph = document.getElementById('fh-placeholder');
-      if (ph) ph.remove();
-      var s = document.createElement('script');
-      s.src = 'https://fareharbor.com/embeds/script/calendar/miamistylerentals/items/339925/?fallback=simple&full-items=yes&flow=613885';
-      document.getElementById('fareharbor-wrap').appendChild(s);
-    }
-    // Clicking any "Book Now" link also triggers calendar load
-    document.querySelectorAll('a[href="#book"]').forEach(function(a) {
-      a.addEventListener('click', function() { setTimeout(loadFH, 400); }, { once: true });
-    });
   </script>
 
 </body>
