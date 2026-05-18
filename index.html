@@ -100,11 +100,12 @@
   }
   </script>
 
-  <!-- Tailwind CDN removed — was render-blocking. Body styles inlined below. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     html { scroll-behavior: smooth; }
 
-    body { font-family: system-ui, -apple-system, sans-serif; background: #000; color: #fff; }
+    body { font-family: system-ui, -apple-system, sans-serif; }
 
     .booking-btn {
       background: #16a34a;
@@ -247,7 +248,7 @@
     }
   </style>
 </head>
-<body>
+<body class="bg-black text-white">
 
   <main>
 
@@ -402,7 +403,8 @@
         <h2 style="font-size:2rem;font-weight:800;margin-bottom:0.5rem;">Book Your Slingshot in Miami</h2>
         <p style="color:#9ca3af;font-size:0.9rem;">Select your date and time below — instant confirmation.</p>
       </div>
-      <div id="fareharbor-wrap" class="fade-in" style="min-height:420px;">
+      <div id="fareharbor-wrap" class="fade-in">
+        <!-- FareHarbor calendar of item #339925 -->
         <script src="https://fareharbor.com/embeds/script/calendar/miamistylerentals/items/339925/?fallback=simple&full-items=yes&flow=613885"></script>
       </div>
       <p style="text-align:center;color:#6b7280;font-size:0.8rem;margin-top:1rem;">
@@ -616,7 +618,6 @@
 
     // ── SHOW PHONE IN NAV ON DESKTOP ──────────────────────────────
     if (window.innerWidth >= 768) document.getElementById('nav-phone').style.display = 'block';
-
   </script>
 
 </body>
